@@ -1,0 +1,9 @@
+.wdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.ipbox {
+    width: 300px;
+    margin-bottom: 15px;
+}

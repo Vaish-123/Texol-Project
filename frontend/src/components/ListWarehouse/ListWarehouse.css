@@ -1,0 +1,40 @@
+.ldiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid red;
+    height: 100px;
+    align-items: center;
+    border-radius: 30px;
+}
+
+#ip {
+    height: 40px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    border: 2px solid black;
+}
+
+.sbtn {
+    height: 39px;
+    margin-left: 50px;
+}
+
+.lbody {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.lth1, .ltd1 {
+    width: 20%;
+}
+
+.lth2, .ltd2 {
+    width: 50%;
+}
