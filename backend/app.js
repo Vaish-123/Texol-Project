@@ -45,12 +45,6 @@ app.post('/addwarehouse', (req, res) => {
         res.json(result);
     })
 })
-// app.post('/listwarehouse', (req, res) => {
-//     const wId = req.body.wId;
-//     Products.find({ wId: wId }).then(result => {
-//         res.json(result);
-//     })
-// })
 app.get('/listwarehouse', (req, res) => {
     Products.find().then(result => {
         res.json(result);
