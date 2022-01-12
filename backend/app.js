@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const { db } = require("./scheme/product");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const dbURL = "mongodb://localhost:27017/sample";
+const dbURL = "mongodb+srv://vaishnav:v123@texol.uhvck.mongodb.net/test";
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>
     app.listen(PORT, () => {
