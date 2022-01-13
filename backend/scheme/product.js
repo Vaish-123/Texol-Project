@@ -7,7 +7,7 @@ const productSchema = new Schema(
     limit:Number,
     wId:Number
   },
-  { timestamps: false }
+  { timestamps: true }
 );
 const Products = mongoose.model('Products', productSchema)
 module.exports = Products;

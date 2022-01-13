@@ -1,24 +1,14 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './ListWarehouse.css'
 
 function ListWarehouse() {
-    const [state, setstate] = useState([])
     const [temp, settemp] = useState([])
-    function abc() {
-        var a = state.map((obj) => {
-            console.log(obj.wId);
-            if (obj.wId == document.getElementById('ip').value) {
-                settemp([...temp, { name: obj.name, limit: obj.limit, wId: obj.wId }])
-                return ({});
-            }
-        })
+    async function abc() {
+        var wId = document.getElementById('ip').value;
+        var sample = await axios.post('http://localhost:3001/listwarehouse', { wId: wId })
+        settemp(sample);
     }
-    useEffect(() => {
-        axios.get('http://localhost:3001/listwarehouse').then(result => {
-            setstate(result.data);
-        })
-    }, [])
     return (
         <div className='container'>
             <div className="ldiv">

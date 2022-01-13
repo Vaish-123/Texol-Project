@@ -21,9 +21,8 @@ app.use(cors());
 app.post('/addProd', (req, res) => {
     const name = req.body.name;
     const prodObj = new Products({ name: name, wId: 0 });
-    prodObj.save().then((result) => {
-        res.json(result);
-    })
+    prodObj.save();
+    res.send();
 })
 app.get('/viewProd', (req, res) => {
     Products.find({ wId: 0 }).then(result => {
@@ -45,8 +44,7 @@ app.post('/addwarehouse', (req, res) => {
         res.json(result);
     })
 })
-app.get('/listwarehouse', (req, res) => {
-    Products.find().then(result => {
-        res.json(result);
-    })
+app.post('/listwarehouse', async (req, res) => {
+    const temp = await Products.find({ wId: req.body.wId })
+    res.json(temp);
 })
