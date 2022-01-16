@@ -4,10 +4,11 @@ import './ListWarehouse.css'
 
 function ListWarehouse() {
     const [temp, settemp] = useState([])
-    async function abc() {
+    function abc() {
         var wId = document.getElementById('ip').value;
-        var sample = await axios.post('http://localhost:3001/listwarehouse', { wId: wId })
-        settemp(sample);
+        axios.post('http://localhost:3001/listwarehouse', { wId: wId }).then(result => {
+            settemp(result.data);
+        })
     }
     return (
         <div className='container'>

@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const { db } = require("./scheme/product");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const dbURL = "mongodb+srv://vaishnav:v123@texol.uhvck.mongodb.net/test";
+const dbURL = "mongodb://localhost:27017/texol";
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>
     app.listen(PORT, () => {
@@ -44,7 +44,8 @@ app.post('/addwarehouse', (req, res) => {
         res.json(result);
     })
 })
-app.post('/listwarehouse', async (req, res) => {
-    const temp = await Products.find({ wId: req.body.wId })
-    res.json(temp);
+app.post('/listwarehouse', (req, res) => {
+    Products.find({ wId: req.body.wId }).then(result => {
+        res.json(result);
+    })
 })
